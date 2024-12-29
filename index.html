@@ -16,12 +16,9 @@
             height: 100vh;
             width: 100vw;
             margin: 0;
-            /* Remove default body margins */
             display: flex;
             flex-direction: column;
-            /* Align header and content vertically */
             justify-content: space-between;
-            /* Ensure even spacing to avoid overflow */
             background-color: rgb(223, 193, 149);
         }
 
@@ -31,35 +28,27 @@
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
             font-size: 2.5em;
             padding: 1.1em 1.51em 0.5em;
-            /* Adjust padding instead of margin */
         }
 
         #root {
             display: block;
             margin: auto;
             height: 300px;
-            /* Reduce height to fit within the viewport */
             width: 80%;
             padding: 20px;
             border-radius: 10px;
             border: 11px solid rgb(118, 108, 96);
-            /* Add a visible border */
             resize: none;
             /* Disable manual resizing */
             opacity: 0.97;
             background-color: white;
         }
 
-        button:active{
-      background-color : transparent;
-}   
-
         #case {
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top:20px; 
-            /* Add space below buttons */
+            margin-top: 20px;
         }
 
         button {
@@ -92,11 +81,6 @@
             border-radius: 14px;
         }
 
-        /* textarea:focus {
-    outline: invert; 
-    box-shadow: 200px;
-    } */
-
         #root:active {
             background-color: rgb(244, 244, 240);
             border: 20px solid #3a3b3c;
@@ -118,7 +102,6 @@
             background-color: transparent;
             width: 10px;
             border-radius: 5%;
-            /* height: 10px; */
             justify-content: middle;
             padding-right: 201px;
         }
@@ -143,19 +126,55 @@
             margin: 0 auto;
             margin-bottom: 50px;
         }
-        
-        #clear:hover{
+
+        #clear:hover {
             background: linear-gradient(180deg, rgb(223, 193, 149), rgb(118, 108, 96));
         }
 
-        #button_2{
+        #button_2 {
             background: linear-gradient(90deg, rgb(223, 193, 149), rgb(118, 108, 96));
         }
 
-        #button_2:hover{
+        #button_2:hover {
             background: linear-gradient(90deg, rgb(118, 108, 96), rgb(223, 193, 149));
         }
-        
+
+        #copyButton {
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            padding: 8px;
+            font-size: 0.7em;
+            background: linear-gradient(180deg, rgb(255, 255, 255), rgb(230, 230, 224));
+            color: rgb(118, 108, 96);
+            font-weight: bold;
+            border-radius: 12px;
+        }
+
+        #copyButton:hover {
+            padding: 12px 22px;
+            color: white;
+            background: linear-gradient(180deg, rgb(223, 193, 149), rgb(118, 108, 96));
+            border: white 4px solid;
+            border-radius: 60px;
+            transition: 0.2s ease-out;
+        }
+
+        #copyButton:active {
+            padding: 10px 18px;
+            color: white;
+            background: linear-gradient(180deg, rgb(118, 108, 96), rgb(223, 193, 149));
+            border: white 4px solid;
+            border-radius: 60px;
+            transition: 0.2s ease-out;
+        }
+
 
         @media (max-width: 800px) {
             header {
@@ -178,12 +197,13 @@
     <header>
         <b>Hey! I am a case changer GPT O.0 😅</b>
     </header>
-    <div>
+    <div id="container">
+        <button id="copyButton">Copy Text</button>
         <textarea id="root" placeholder="Enter your text here......"></textarea>
     </div>
     <div id="case">
         <button id="button_1">To Upper Case</button>
-        <button id ="button_2">To Lower Case</button>
+        <button id="button_2">To Lower Case</button>
     </div>
     <button id="clear">Clear Text</button>
 
@@ -191,7 +211,7 @@
     <script>
         const textArea = document.getElementById('root');
         const buttons = document.querySelectorAll('button');
-        
+
         // To Upper and Lower Case
         buttons.forEach(button => {
             button.addEventListener('click', () => {
@@ -214,6 +234,14 @@
             e.preventDefault(); // Prevents the right-click menu
         });
 
+        // Copy Text to Clipboard
+        document.getElementById('copyButton').addEventListener('click', () => {
+            textArea.select();
+            document.execCommand('copy');
+        });
+
+
     </script>
 </body>
+
 </html>
