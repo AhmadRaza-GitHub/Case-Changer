@@ -1,13 +1,13 @@
-## Case Changer Project
+# Case Changer Project
 
-# Description
+## Description
 
 The Case Changer is a simple web-based application that allows users to manipulate the case of their text. Users can convert text to uppercase, lowercase, or clear the input text. It also includes a feature to copy the text to the clipboard. This application is built using HTML, CSS, and JavaScript, making it lightweight and accessible across devices.
 
 
 ---
 
-# Features
+## Features
 
 1. Text Transformation:
 
