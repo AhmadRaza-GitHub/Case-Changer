@@ -17,25 +17,25 @@ Convert text to lowercase.
 
 
 
-# 2. Clear Text:
+## 2. Clear Text:
 
 Clear all content from the text area with a single click.
 
 
 
-# 3. Copy Text:
+## 3. Copy Text:
 
 Copy the text to the clipboard for easy use elsewhere.
 
 
 
-# 4. Responsive Design:
+## 4. Responsive Design:
+
 
 Optimized for both desktop and mobile devices.
 
 
-
-# 5. Right-Click Prevention:
+## Right-Click Prevention:
 
 Disables the default context menu for a distraction-free experience.
 
